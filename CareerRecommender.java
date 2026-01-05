@@ -39,15 +39,17 @@ public class CareerRecommender {
                 double[] w = weights.get(career);
                 double score = (math * w[0]) + (control * w[1]) + (programming * w[2]);
 
-                // IF-ELSE
-                if (career.toLowerCase().contains(interest.toLowerCase())) {
-                    score = score + 5;
-                } else {
-                    score = score + 0;
-                }
+               if (career.toLowerCase().contains(interest.toLowerCase())) {
+    score = score + 10;
+} else {
+    score = score - 2;
+}
 
-                scores.add(new CareerScore(career, score));
-            }
+
+               if (score >= 70) {
+    scores.add(new CareerScore(career, score));
+}
+
 
             // Sort descending
             scores.sort((a, b) -> Double.compare(b.score, a.score));
