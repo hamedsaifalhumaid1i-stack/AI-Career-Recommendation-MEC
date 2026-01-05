@@ -46,8 +46,10 @@ public class CareerRecommender {
                     score = score + 0;
                 }
 
-                scores.add(new CareerScore(career, score));
-            }
+               if (score >= 70) {
+    scores.add(new CareerScore(career, score));
+}
+
 
             // Sort descending
             scores.sort((a, b) -> Double.compare(b.score, a.score));
